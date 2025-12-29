@@ -1,11 +1,11 @@
 steps:
   # 1. Build the container image
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'us-central1-docker.pkg.dev/$PROJECT_ID/stratos-repo/stratos-app:', '.']
+    args: ['build', '-t', 'us-central1-docker.pkg.dev/$PROJECT_ID/stratos-repo/stratos-app:$COMMIT_SHA', '.']
 
   # 2. Push the image to Artifact Registry
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'us-central1-docker.pkg.dev//stratos-repo/stratos-app:']
+    args: ['push', 'us-central1-docker.pkg.dev/$PROJECT_ID/stratos-repo/stratos-app:$COMMIT_SHA']
 
   # 3. Deploy to Cloud Run
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
@@ -15,10 +15,13 @@ steps:
       - 'deploy'
       - 'stratos-app'
       - '--image'
-      - 'us-central1-docker.pkg.dev//stratos-repo/stratos-app:'
+      - 'us-central1-docker.pkg.dev/$PROJECT_ID/stratos-repo/stratos-app:$COMMIT_SHA'
       - '--region'
       - 'us-central1'
       - '--allow-unauthenticated'
 
 images:
-  - 'us-central1-docker.pkg.dev//stratos-repo/stratos-app:'
+  - 'us-central1-docker.pkg.dev/$PROJECT_ID/stratos-repo/stratos-app:$COMMIT_SHA'
+
+options:
+  logging: CLOUD_LOGGING_ONLY
