@@ -1,6 +1,6 @@
 {
   "name": "stratos-app",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Project Stratos Foundation App",
   "main": "index.js",
   "scripts": {

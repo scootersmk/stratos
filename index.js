@@ -8,7 +8,7 @@ const REVISION = process.env.K_REVISION || 'v0';
 
 app.get('/', (req, res) => {
   res.json({
-    message: 'Welcome to Project Stratos',
+    message: 'Welcome to Project Stratos v2',
     status: 'operational',
     service: SERVICE,
     revision: REVISION,

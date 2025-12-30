@@ -19,8 +19,8 @@ A production-grade, global-scale web application hosted on Google Cloud Platform
 
 ## 📈 Roadmap & Milestones
 - [x] **Milestone 1: Foundation** - Project creation, GitHub linkage, and manual Cloud Run deploy.
-- [ ] **Milestone 2: Automated Pipeline** - `cloudbuild.yaml` implementation for auto-deploy on push.
-- [ ] **Milestone 3: Infrastructure as Code** - Replacing manual setup with Terraform manifests.
+- [x] **Milestone 2: Automated Pipeline** - `cloudbuild.yaml` implementation for auto-deploy on push.
+- [x] **Milestone 3: Infrastructure as Code** - Replacing manual setup with Terraform manifests.
 - [ ] **Milestone 4: Traffic Management** - Implementing Canary releases and Blue/Green deployments.
 - [ ] **Milestone 5: Global Scale** - Configuring Global Load Balancer, CDN, and Custom Domains.
 
